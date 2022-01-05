@@ -17,19 +17,33 @@
 		information like your phone number, address, email, area of work, and 
 		social media handles. 
 	<h2> Sign up for Augie Alumni Bank </h2>
-		<form action="/action_page.php">
-			<label for="fname">Username:</label><br>
-			<input type="text" id="fname" name="fname" value="username"><br>
-			<p> Your username should be between 8 and 16 characters.</p>
-			<label for="lname">Password:</label><br>
-			<input type="text" id="lname" name="lname" value="password"><br>
+		<form action="/register.php" method="post">
+			<label for="firstname">First Name:</label><br>
+			<input type="text" id="firstname" name="firstname" placeholder=""><br>
+			
+			<label for="lastname">Last Name:</label><br>
+			<input type="text" id="lastname" name="lastname"><br>
+			
+			<label for="phonenumber">Phone Number:</label><br>
+			<input type="text" id="phonenumber" name="phonenumber"><br>
+			
+			<label for="address">Address:</label><br>
+			<input type="text" id="address" name="address"><br>
+			
+			<label for="email">Email:</label><br>
+			<input type="text" id="email" name="email"><br>
+			
+			<label for="areaofwork">Area of Work:</label><br>
+			<input type="text" id="areaofwork" name="areaofwork"><br>
+
+			<label for="password">Password:</label><br>
+			<input type="text" id="password" name="password" placeholder=""><br>
 			<p>Your password should contain at least one upper case letter and at 
 				least one number and special character. </p>
+
+			<br>
 			<input type="submit" value="Submit">
-	  	</form> 
-	  
-		<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
-	
+	  	</form> 	
 </body>
 </html>
 
