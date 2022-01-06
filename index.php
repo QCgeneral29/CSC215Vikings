@@ -6,6 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Augustana College Alumni Information</title>
 	<style>
+	img{ 
+		position: fixed; bottom: 35px; right: 10px;
+	}
 		h1 {text-align: center;
 			 
 		}
@@ -22,15 +25,10 @@
 		background-color:rgb(2, 66, 124);
 	}
 	
-	hr.new1 {
-  	border: 10px rgb(255, 220, 0)
+	hr.new {
+		border: 10px solid rgb(255, 220, 0);
 	}
 
-	hr.new2{
-	position: relative bottom;
-	border: 10px solid rgb(255, 220, 0)
-	
-	}
 	/* Section about two buttons*/
 		.btn-group button {
   	background-color: rgb(255, 220, 0); /* Green background */
@@ -63,7 +61,7 @@
 </style>
 </head>
 <body>
-	<hr class="new1">
+	<hr class="new">
 	<h1 style="font-size:20px;">Augustana College </h1>
 		<p> Hello Augustana Alumni and Friends! </p> 
 		<p> Your very own local group of coders, "Team Vikings" have created
@@ -73,15 +71,13 @@
 		create a username and password. <br>Along with that you will submit 
 		information like your phone number, address, email, area of work, and 
 		social media handles. 
-	<p2></p>
+</p>
 		<div class="btn-group">
 			<button>Sign-In</button>
 			<button>Sign-Up</button>
 		</div>
-	</p2>
-		<p><b><a href="https://www.augustana.edu" target="_blank">If you're looking for Augustana's webpage</a></b></p>
 		
-		<hr class="new2">
+		
 	</div>
 	<h2> Sign up for Augie Alumni Bank </h2>
 		<form action="/register.php" method="post">
@@ -111,6 +107,12 @@
 			<br>
 			<input type="submit" value="Submit">
 	  	</form> 	
+		  <p><b><a href="https://www.augustana.edu" target="_blank">If you're looking for Augustana's webpage</a></b></p>
+		  <img >
+		  <img src="AugieLogo.png" alt="Augustana College" width="100" height="100">
+		  <hr class="new">
+		  
+
 </body>
 </html>
 
