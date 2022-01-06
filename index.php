@@ -4,10 +4,10 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Augustana Alumni Information Collection</title>
+	<title>Augustana College Alumni Information</title>
 	<style>
 		h1 {text-align: center;
-			background-color: white; 
+			 
 		}
 		
 		p {text-align: center;}
@@ -15,29 +15,56 @@
 			
 		}
 		form{text-align: center;}
-		rect{text-align: center;}
 	a {
-  	color: lightpink;
+  	color: rgb(255, 220, 0);
 		}
 	body{
-		background-image: url("oldmain.jpeg");
-		background-repeat: no-repeat;
-  		background-size: 1450px 700px;
+		background-color:rgb(2, 66, 124);
 	}
-	.rectangle{
-		padding-top: 40px;
-  		width:100px;
-  		height:100px;
-		background-color: white;
-  		border:1px solid #000; 
-  		position: top;
-  		text-align: center;
+	
+	hr.new1 {
+  	border: 10px rgb(255, 220, 0)
 	}
+
+	hr.new2{
+	position: relative bottom;
+	border: 10px solid rgb(255, 220, 0)
+	
+	}
+	/* Section about two buttons*/
+		.btn-group button {
+  	background-color: rgb(255, 220, 0); /* Green background */
+  	border: 1px darkgoldenrod; /* Green border */
+  	color: white; /* White text */
+  	padding: 10px 24px; /* Some padding */
+  	cursor: pointer; /* Pointer/hand icon */
+  	float: left; /* Float the buttons side by side */
+	  text-align: center;  
+		}
+/* Clear floats (clearfix hack) */
+   .btn-group:after {
+ 	 content: "";
+ 	 clear: both;
+ 	 display: table;
+	  text-align: center;  
+	}
+
+	.btn-group button:not(:last-child) {
+  	border-right: none; /* Prevent double borders */
+	  text-align: center;  
+	}
+
+	/* Add a background color on hover */
+	.btn-group button:hover {
+ 	 background-color: rgb(2, 66, 124);
+	  text-align: center;  
+	}
+	p2{text-align: center;}
 </style>
 </head>
 <body>
-	
-	<h1>Augustana Alumni Information Bank </h1>
+	<hr class="new1">
+	<h1 style="font-size:20px;">Augustana College </h1>
 		<p> Hello Augustana Alumni and Friends! </p> 
 		<p> Your very own local group of coders, "Team Vikings" have created
 		a website to connect Augustana's past and future alumni. <br> The goal of the
@@ -46,25 +73,15 @@
 		create a username and password. <br>Along with that you will submit 
 		information like your phone number, address, email, area of work, and 
 		social media handles. 
-	</div>
-	<h2> Sign up for Augie Alumni Bank </h2>
-		<form action="/action_page.php">
-			<label for="fname">Username:</label><br>
-			<input type="text" id="fname" name="fname" value="username"><br>
-			<p> Your username should be between 8 and 16 characters.</p>
-			<label for="lname">Password:</label><br>
-			<input type="text" id="lname" name="lname" value="password"><br>
-			<p>Your password should contain at least one upper case letter and at 
-				least one number and special character. </p>
-			<input type="submit" value="Submit">
-	  	</form> 
-	  
-		<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
-
-		<h2>Style a link with a color</h2>
-
-		<p><b><a href="https://www.augustana.edu" target="_blank">This is a link</a></b></p>
-	
+	<p2></p>
+		<div class="btn-group">
+			<button>Sign-In</button>
+			<button>Sign-Up</button>
+		</div>
+	</p2>
+		<p><b><a href="https://www.augustana.edu" target="_blank">If you're looking for Augustana's webpage</a></b></p>
+		
+		<hr class="new2">
 </body>
 </html>
 
