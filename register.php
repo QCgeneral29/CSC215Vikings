@@ -36,7 +36,8 @@ $phonenumber = $_POST['phonenumber'];
 $address = $_POST['address'];
 $email = $_POST['email'];
 $areaofwork = $_POST['areaofwork'];
-$password = $_POST['password'];
+//$password = $_POST['password'];
+$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
 
 $stmt->execute();
