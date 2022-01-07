@@ -101,7 +101,7 @@
 			<input type="text" id="areaofwork" name="areaofwork"><br>
 
 			<label for="password">Password:</label><br>
-			<input type="text" id="password" name="password" placeholder=""><br>
+			<input type="password" id="password" name="password" placeholder=""><br>
 			<p>Your password should contain at least one upper case letter and at 
 				least one number and special character. </p>
 

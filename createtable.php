@@ -1,4 +1,6 @@
 <?php
+// Make sure you go to localhost/phpmyadmin and create an "augie" database
+
 $servername = "localhost";
 $username = "root";
 $password = "";
