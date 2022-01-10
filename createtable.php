@@ -21,7 +21,7 @@ CREATE TABLE `users` (
     `lastname` varchar(100) NOT NULL,
     `phonenumber` int(9) unsigned NOT NULL,
     `address` varchar(255) NOT NULL,
-    `email` varchar(100) NOT NULL,
+    `email` varchar(100) UNIQUE NOT NULL,
     `areaofwork` varchar(255) NOT NULL,
     `password` varchar(255) NOT NULL,
     PRIMARY KEY (`id`),

@@ -7,6 +7,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Augustana College Alumni Information</title>
 	<style>
+	body {
+		color:white;
+	}
+
 	img{ 
 		position: fixed; bottom: 35px; right: 10px;
 	}
