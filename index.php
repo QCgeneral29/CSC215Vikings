@@ -72,18 +72,14 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 <html lang="en">
 <head>
 	<!-- Jason was here -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:ital@1&family=Varela&family=Varela+Round&display=swap" rel="stylesheet">
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Augustana College Alumni Information</title>
 	<style>
-	body {
-		color:white;
-	}
-
-	img{ 
-		position: fixed; bottom: 35px; right: 10px;
-	}
 		h1 {text-align: center;
 			 
 		}
@@ -107,7 +103,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 	/* Section about two buttons*/
 		.btn-group button {
   	background-color: rgb(255, 220, 0); /* Green background */
-  	border: 1px darkgoldenrod; /* Green border */
+  	border: 1px black; /* Green border */
   	color: white; /* White text */
   	padding: 10px 24px; /* Some padding */
   	cursor: pointer; /* Pointer/hand icon */
@@ -137,23 +133,19 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 </head>
 <body>
 	<hr class="new">
-	<h1 style="font-size:20px;">Augustana College </h1>
-		<p> Hello Augustana Alumni and Friends! </p> 
-		<p> Your very own local group of coders, "Team Vikings" have created
+	<img src="AugieGrads.jpg" style="object-fit:cover; width: 1425px; height:100px ;border: 1px solid rgb(255, 220, 0)">
+	<h1 style="font-size:50px; position: center; font-family: VarelaRound; color: rgb(255, 220, 0)">Augustana College Alumni Network</h1>
+		<p style = "color: white; font-size: 35px ;font-family: Varela"> Hello Augustana Alumni and Friends! </p> 
+		<p style = "color: white; font-size: 25px ;font-family: Varela">Your very own local group of coders, "Team Vikings" have created
 		a website to connect Augustana's past and future alumni. <br> The goal of the
 		website is for alumni to network and enter the professional world. </p>
-		<p> To access this wonderful bank of Alumni information you will need
+		<p style = "color: white; font-size: 25px;font-family: Varela"> To access this wonderful bank of Alumni information you will need
 		create a username and password. <br>Along with that you will submit 
 		information like your phone number, address, email, area of work, and 
 		social media handles. 
 </p>
-		<div class="btn-group">
-			<button>Sign-In</button>
-			<button>Sign-Up</button>
-		</div>
 		
 		
-	</div>
 	<h2> Sign up for Augie Alumni Bank </h2>
 	<p style="color:red;"><?php echo $warningMessage ?></p>
 		<form action="/index.php" method="post">
@@ -182,11 +174,16 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 
 			<br>
 			<input type="submit" value="Submit">
-	  	</form> 	
+	  	</form> 
+		  
+		  <div class="btn-group">
+			<button>Sign-In</button>
+			<button>Sign-Up</button>
+		</div>
 		  <p><b><a href="https://www.augustana.edu" target="_blank">If you're looking for Augustana's webpage</a></b></p>
-		  <img >
-		  <img src="AugieLogo.png" alt="Augustana College" width="100" height="100">
-		  <hr class="new">
+		  <img src="AugieLogo.png" alt="Augustana College" style = "width: 100px; height: 100px; display: block; margin-left: auto; margin-right: auto;">
+		  <img src="caps.png" style="object-fit:cover; width: 1425px; height: 100px; border: 1px solid rgb(255, 220, 0);">
+		  <hr class="new" >
 		  
 
 </body>
