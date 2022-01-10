@@ -1,3 +1,73 @@
+<?php
+if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) 
+{
+	$driver = new mysqli_driver();
+	$driver->report_mode = MYSQLI_REPORT_ALL;
+
+	$warningMessage = "Account Created Successfully";
+	$requiredFields = array('firstname', 'lastname', 'phonenumber', 'address', 'email', 'areaofwork', 'password');
+	$error = false;
+	foreach($requiredFields as $field) {
+		if (empty($_POST[$field])) {
+			$error = true;
+		}
+	}
+	
+	if ($error) {
+		$warningMessage = "Error: All fields are required.";
+	}else {
+		// Assign inputs
+		$firstname = $_POST['firstname'];
+		$lastname = $_POST['lastname'];
+		$phonenumber = $_POST['phonenumber'];
+		$address = $_POST['address'];
+		$email = $_POST['email'];
+		$areaofwork = $_POST['areaofwork'];
+		//$password = $_POST['password'];
+		$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+	
+		$servername = "localhost";
+		$username = "root";
+		$password = "";
+		$dbname = "augie";
+		// Create connection
+		$conn = new mysqli($servername, $username, $password, $dbname);
+		// Check connection
+		if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_eeror);
+		}
+
+		// Check if email exists
+		$prepareStatement = "SELECT * FROM users WHERE email=?";
+		$stmt = $conn->prepare($prepareStatement);
+		$email = $_POST['email'];
+		$stmt->bind_param("s", $email);
+		$stmt->execute();
+		$result = $stmt->get_result();
+		$row = $result->fetch_assoc();
+
+		// If email does not exist, create new account
+		if(isset($row['id'])) {
+			$warningMessage = "Account with email already exists";
+		}else {
+			// prepare and bind
+			$prepareStatement = "INSERT INTO users (firstname, lastname, phonenumber, address, email, areaofwork, password) VALUES (?, ?, ?, ?, ?, ?, ?)";
+			$stmt = $conn->prepare($prepareStatement);
+			$stmt->bind_param("ssissss",
+				$firstname,$lastname, $phonenumber, $address, $email, $areaofwork, $password
+			);
+			
+			$stmt->execute();
+			
+			$stmt->close();
+			$conn->close();
+		}
+		
+
+	}
+} // End POST if statement
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -85,7 +155,8 @@
 		
 	</div>
 	<h2> Sign up for Augie Alumni Bank </h2>
-		<form action="/register.php" method="post">
+	<p style="color:red;"><?php echo $warningMessage ?></p>
+		<form action="/index.php" method="post">
 			<label for="firstname">First Name:</label><br>
 			<input type="text" id="firstname" name="firstname" placeholder=""><br>
 			
