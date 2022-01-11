@@ -28,10 +28,10 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 	
 		$servername = "localhost";
 		$username = "root";
-		$password = "";
+		$dbpassword = "";
 		$dbname = "augie";
 		// Create connection
-		$conn = new mysqli($servername, $username, $password, $dbname);
+		$conn = new mysqli($servername, $username, $dbpassword, $dbname);
 		// Check connection
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_eeror);
@@ -177,7 +177,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 	  	</form> 
 		  
 		  <div class="btn-group">
-			<button>Sign-In</button>
+			<button><a href="/logintestpage.html"> Sign-In</a></button>
 			<button>Sign-Up</button>
 		</div>
 		  <p><b><a href="https://www.augustana.edu" target="_blank">If you're looking for Augustana's webpage</a></b></p>

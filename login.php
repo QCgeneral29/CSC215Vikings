@@ -49,6 +49,8 @@ if (password_verify($_POST['password'], $row['password'])) {
     $_SESSION['email'] = $row['email'];
     $_SESSION['areaofwork'] = $row['areaofwork'];
     echo "Successful login.";
+    header("Location: /dashboard.php");
+    die("Please login.");
 }else {
     echo "Incorrect password.";
 }

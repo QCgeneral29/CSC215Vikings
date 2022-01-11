@@ -1,0 +1,24 @@
+#profile-top {
+    border-bottom: solid;
+}
+
+#welcome-text {
+    display:inline-block;
+}
+
+#logout-text {
+    display:inline-block;
+    position: absolute;
+    right:3px;
+}
+
+.profile-row {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 14px 0px 14px 0px;
+}
+
+.profile-item {
+    width:25%;
+}
