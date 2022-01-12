@@ -128,7 +128,35 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
  	 background-color: rgb(2, 66, 124);
 	  text-align: center;  
 	}
+
+	/* background for form*/
+	.container {
+  	text-align: center;
+  	left: 0;
+  	right: 0;
+ 	}
+
+	.main {
+  	position:relative;
+  	width: 500px;
+  	min-height: 100px;
+  	margin: auto;
+  	padding-top:15px;
+}
+
+	.main:before {
+  	content:'';
+  	position: absolute;
+  	width: 550px;
+  	height: 475px;
+  	margin: auto;
+  	z-index: -1;
+	background-color:lightgray;
+  	border: 2px solid rgb(255, 220, 0);
+  	left:-25px;
+}
 	p2{text-align: center;}
+
 </style>
 </head>
 <body>
@@ -145,7 +173,8 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 		social media handles. 
 </p>
 		
-		
+	<div class="container">
+	<div class="main">
 	<h2> Sign up for Augie Alumni Bank </h2>
 	<p style="color:red;"><?php echo $warningMessage ?></p>
 		<form action="/index.php" method="post">
@@ -175,11 +204,13 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 			<br>
 			<input type="submit" value="Submit">
 	  	</form> 
-		  
+	</div>
+</div>
 		  <div class="btn-group">
 			<button><a href="/logintestpage.html"> Sign-In</a></button>
 			<button>Sign-Up</button>
 		</div>
+		
 		  <p><b><a href="https://www.augustana.edu" target="_blank">If you're looking for Augustana's webpage</a></b></p>
 		  <img src="AugieLogo.png" alt="Augustana College" style = "width: 100px; height: 100px; display: block; margin-left: auto; margin-right: auto;">
 		  <img src="caps.png" style="object-fit:cover; width: 1425px; height: 100px; border: 1px solid rgb(255, 220, 0);">
