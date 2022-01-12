@@ -150,25 +150,25 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 	<p style="color:red;"><?php echo $warningMessage ?></p>
 		<form action="/index.php" method="post">
 			<label for="firstname">First Name:</label><br>
-			<input type="text" id="firstname" name="firstname" placeholder=""><br>
+			<input type="text" id="firstname" name="firstname" placeholder="" required><br>
 			
 			<label for="lastname">Last Name:</label><br>
-			<input type="text" id="lastname" name="lastname"><br>
+			<input type="text" id="lastname" name="lastname" required><br>
 			
 			<label for="phonenumber">Phone Number:</label><br>
-			<input type="text" id="phonenumber" name="phonenumber"><br>
+			<input type="number" id="phonenumber" name="phonenumber" required><br>
 			
 			<label for="address">Address:</label><br>
-			<input type="text" id="address" name="address"><br>
+			<input type="text" id="address" name="address" required><br>
 			
 			<label for="email">Email:</label><br>
-			<input type="text" id="email" name="email"><br>
+			<input type="text" id="email" name="email" required><br>
 			
 			<label for="areaofwork">Area of Work:</label><br>
-			<input type="text" id="areaofwork" name="areaofwork"><br>
+			<input type="text" id="areaofwork" name="areaofwork" required><br>
 
 			<label for="password">Password:</label><br>
-			<input type="password" id="password" name="password" placeholder=""><br>
+			<input type="password" id="password" name="password" placeholder="" required><br>
 			<p>Your password should contain at least one upper case letter and at 
 				least one number and special character. </p>
 
