@@ -103,12 +103,14 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 	/* Section about two buttons*/
 		.btn-group button {
   	background-color: rgb(255, 220, 0); /* Green background */
-  	border: 1px black; /* Green border */
+  	border: 2px black; /* Green border */
   	color: white; /* White text */
   	padding: 10px 24px; /* Some padding */
   	cursor: pointer; /* Pointer/hand icon */
   	float: left; /* Float the buttons side by side */
-	  text-align: center;  
+	text-align: center;  
+	position: relative;
+	left: 160px;
 		}
 /* Clear floats (clearfix hack) */
    .btn-group:after {
@@ -148,7 +150,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
   	content:'';
   	position: absolute;
   	width: 550px;
-  	height: 475px;
+  	height: 465px;
   	margin: auto;
   	z-index: -1;
 	background-color:lightgray;
@@ -157,6 +159,15 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 }
 	p2{text-align: center;}
 
+	input[type="submit"]{
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
 </style>
 </head>
 <body>
@@ -201,16 +212,16 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 			<p>Your password should contain at least one upper case letter and at 
 				least one number and special character. </p>
 
-			<br>
-			<input type="submit" value="Submit">
+
+			<div class="btn-group">
+				<button><a href="/logintestpage.html"; style = "color:white"> Sign-In</a></button>
+				<button><input type="submit"></input></button>
+			</div>
 	  	</form> 
 	</div>
 </div>
-		  <div class="btn-group">
-			<button><a href="/logintestpage.html"> Sign-In</a></button>
-			<button>Sign-Up</button>
-		</div>
-		
+
+		<br>
 		  <p><b><a href="https://www.augustana.edu" target="_blank">If you're looking for Augustana's webpage</a></b></p>
 		  <img src="AugieLogo.png" alt="Augustana College" style = "width: 100px; height: 100px; display: block; margin-left: auto; margin-right: auto;">
 		  <img src="caps.png" style="object-fit:cover; width: 1425px; height: 100px; border: 1px solid rgb(255, 220, 0);">
