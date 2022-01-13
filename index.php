@@ -214,7 +214,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 
 
 			<div class="btn-group">
-				<button><a href="/logintestpage.html"; style = "color:white"> Sign-In</a></button>
+				<button type="button"><a href="/logintestpage.html"; style = "color:white">Sign-In</a></button>
 				<button><input type="submit"></input></button>
 			</div>
 	  	</form> 
