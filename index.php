@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors',1);
+error_reporting(E_ALL);
+$warningMessage = "";
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) 
 {
 	$driver = new mysqli_driver();
@@ -23,9 +26,33 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 		$address = $_POST['address'];
 		$email = $_POST['email'];
 		$areaofwork = $_POST['areaofwork'];
+		$profilepictureurl = '';
 		//$password = $_POST['password'];
 		$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 	
+		$file_type = $_FILES['profilepicture']['type']; //returns the mimetype
+
+		$allowed = array("image/jpeg");
+		if(!in_array($file_type, $allowed)) {
+		  die('Only jpg files are allowed.');
+		}
+
+		$uploaddir = 'data/profile_pictures/';
+		$fileupload = $uploaddir . $firstname . "_" . $lastname . ".jpg";
+
+		if (!file_exists($uploaddir)) {
+			mkdir($uploaddir, 0777, true);
+		}
+
+		if (move_uploaded_file($_FILES['profilepicture']['tmp_name'], $fileupload)) {
+			// File upload worked
+			$profilepictureurl = $fileupload;
+		}else {
+			print_r($_FILES);
+			print_r($fileupload);
+			die("File upload failed: " . $_FILES['profilepicture']['error']);
+		}
+
 		$servername = "localhost";
 		$username = "root";
 		$dbpassword = "";
@@ -51,10 +78,10 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 			$warningMessage = "Account with email already exists";
 		}else {
 			// prepare and bind
-			$prepareStatement = "INSERT INTO users (firstname, lastname, phonenumber, address, email, areaofwork, password) VALUES (?, ?, ?, ?, ?, ?, ?)";
+			$prepareStatement = "INSERT INTO users (firstname, lastname, phonenumber, address, email, areaofwork, profilepicture, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 			$stmt = $conn->prepare($prepareStatement);
-			$stmt->bind_param("ssissss",
-				$firstname,$lastname, $phonenumber, $address, $email, $areaofwork, $password
+			$stmt->bind_param("ssisssss",
+				$firstname,$lastname, $phonenumber, $address, $email, $areaofwork, $profilepictureurl, $password
 			);
 			
 			$stmt->execute();
@@ -188,7 +215,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 	<div class="main">
 	<h2> Sign up for Augie Alumni Bank </h2>
 	<p style="color:red;"><?php echo $warningMessage ?></p>
-		<form action="/index.php" method="post">
+		<form action="/index.php" method="post" enctype="multipart/form-data" attribute>
 			<label for="firstname">First Name:</label><br>
 			<input type="text" id="firstname" name="firstname" placeholder="" required><br>
 			
@@ -206,6 +233,9 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 			
 			<label for="areaofwork">Area of Work:</label><br>
 			<input type="text" id="areaofwork" name="areaofwork" required><br>
+
+			<label for="profilepicture">Profile Picture:</label><br>
+			<input type="file" id="profilepicture" name="profilepicture"><br>
 
 			<label for="password">Password:</label><br>
 			<input type="password" id="password" name="password" placeholder="" required><br>

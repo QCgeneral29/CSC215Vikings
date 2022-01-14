@@ -39,6 +39,9 @@
 
 <div class="profile-row" id="profile-top">
     <div class="profile-item">
+        <!-- Profile Picture -->
+    </div>
+    <div class="profile-item">
         First Name
     </div>
     <div class="profile-item">
@@ -55,6 +58,10 @@
 <?php 
     while($row = $result->fetch_assoc()) {
         echo '<div class="profile-row">';
+
+        echo '<div class="profile-item">';
+        echo '<img src="' . htmlspecialchars($row['profilepicture']) . '" alt="" class="profile-pictures">';
+        echo '</div>';
 
         echo '<div class="profile-item">';
         echo ucfirst(htmlspecialchars($row['firstname']));

@@ -15,10 +15,17 @@
 .profile-row {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     width: 100%;
     margin: 14px 0px 14px 0px;
 }
 
 .profile-item {
     width:25%;
+}
+
+.profile-pictures {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
 }

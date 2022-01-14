@@ -23,6 +23,7 @@ CREATE TABLE `users` (
     `address` varchar(255) NOT NULL,
     `email` varchar(100) NOT NULL,
     `areaofwork` varchar(255) NOT NULL,
+    `profilepicture` varchar(255) NOT NULL,
     `password` varchar(255) NOT NULL,
     PRIMARY KEY (`id`),
     UNIQUE KEY `email` (`email`)
