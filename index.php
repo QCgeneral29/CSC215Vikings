@@ -171,6 +171,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
   	min-height: 100px;
   	margin: auto;
   	padding-top:15px;
+	border-radius: 25px;
 }
 
 	.main:before {
@@ -183,6 +184,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 	background-color:lightgray;
   	border: 2px solid rgb(255, 220, 0);
   	left:-25px;
+	border-radius: 25px;
 }
 	p2{text-align: center;}
 
