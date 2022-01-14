@@ -201,7 +201,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 </head>
 <body>
 	<hr class="new">
-	<img src="AugieGrads.jpg" style="object-fit:cover; width: 1425px; height:100px ;border: 1px solid rgb(255, 220, 0)">
+	<img src="AugieGrads.jpg" style="object-fit:cover; width: 100%; height:100px ;border: 1px solid rgb(255, 220, 0)">
 	<h1 style="font-size:50px; position: center; font-family: VarelaRound; color: rgb(255, 220, 0)">Augustana College Alumni Network</h1>
 		<p style = "color: white; font-size: 35px ;font-family: Varela"> Hello Augustana Alumni and Friends! </p> 
 		<p style = "color: white; font-size: 25px ;font-family: Varela">Your very own local group of coders, "Team Vikings" have created
@@ -256,7 +256,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 		<br>
 		  <p><b><a href="https://www.augustana.edu" target="_blank">If you're looking for Augustana's webpage</a></b></p>
 		  <img src="AugieLogo.png" alt="Augustana College" style = "width: 100px; height: 100px; display: block; margin-left: auto; margin-right: auto;">
-		  <img src="caps.png" style="object-fit:cover; width: 1425px; height: 100px; border: 1px solid rgb(255, 220, 0);">
+		  <img src="caps.png" style="object-fit:cover; width: 100%; height: 100px; border: 1px solid rgb(255, 220, 0);">
 		  <hr class="new" >
 		  
 
