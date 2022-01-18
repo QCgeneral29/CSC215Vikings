@@ -20,6 +20,7 @@ CREATE TABLE `users` (
     `firstname` varchar(100) NOT NULL,
     `lastname` varchar(100) NOT NULL,
     `phonenumber` int(9) unsigned NOT NULL,
+    `graduationyear` int(4) unsigned NOT NULL,
     `address` varchar(255) NOT NULL,
     `email` varchar(100) NOT NULL,
     `areaofwork` varchar(255) NOT NULL,

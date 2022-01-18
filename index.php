@@ -26,9 +26,14 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 		$address = $_POST['address'];
 		$email = $_POST['email'];
 		$areaofwork = $_POST['areaofwork'];
+		$graduationyear = $_POST['graduationyear'];
 		$profilepictureurl = '';
 		//$password = $_POST['password'];
 		$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+
+		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+			die("Invalid email format.");
+		}
 	
 		$file_type = $_FILES['profilepicture']['type']; //returns the mimetype
 
@@ -78,10 +83,10 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 			$warningMessage = "Account with email already exists";
 		}else {
 			// prepare and bind
-			$prepareStatement = "INSERT INTO users (firstname, lastname, phonenumber, address, email, areaofwork, profilepicture, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+			$prepareStatement = "INSERT INTO users (firstname, lastname, phonenumber, address, email, areaofwork, graduationyear, profilepicture, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			$stmt = $conn->prepare($prepareStatement);
-			$stmt->bind_param("ssisssss",
-				$firstname,$lastname, $phonenumber, $address, $email, $areaofwork, $profilepictureurl, $password
+			$stmt->bind_param("ssisssiss",
+				$firstname,$lastname, $phonenumber, $address, $email, $areaofwork, $graduationyear, $profilepictureurl, $password
 			);
 			
 			$stmt->execute();
@@ -231,7 +236,10 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 			<input type="text" id="address" name="address" required><br>
 			
 			<label for="email">Email:</label><br>
-			<input type="text" id="email" name="email" required><br>
+			<input type="email" id="email" name="email" required><br>
+
+			<label for="graduationyear">Graduation Year:</label><br>
+			<input type="number" id="graduationyear" name="graduationyear" required><br>
 			
 			<label for="areaofwork">Area of Work:</label><br>
 			<input type="text" id="areaofwork" name="areaofwork" required><br>
@@ -246,7 +254,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 
 
 			<div class="btn-group">
-				<button type="button"><a href="/logintestpage.html"; style = "color:white">Sign-In</a></button>
+				<button type="button"><a href="/loginpage.php"; style = "color:white">Sign-In</a></button>
 				<button><input type="submit"></input></button>
 			</div>
 	  	</form> 

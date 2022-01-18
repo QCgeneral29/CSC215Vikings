@@ -1,7 +1,7 @@
 <?php 
     session_start();
     if(!isset($_SESSION['id'])) {
-        header("Location: /logintestpage.html");
+        header("Location: /loginpage.php");
         die("Please login.");
     }
     
@@ -47,6 +47,11 @@
     <div class="profile-item">
         Last Name
     </div>
+
+    <div class="profile-item">
+        Graduation Year
+    </div>
+
     <div class="profile-item">
         Area of work
     </div>
@@ -69,6 +74,10 @@
 
         echo '<div class="profile-item">';
         echo ucfirst(htmlspecialchars($row['lastname']));
+        echo '</div>';
+
+        echo '<div class="profile-item">';
+        echo htmlspecialchars($row['graduationyear']);
         echo '</div>';
 
         echo '<div class="profile-item">';
