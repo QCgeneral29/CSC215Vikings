@@ -27,35 +27,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:ital@1&family=Varela&family=Varela+Round&display=swap" rel="stylesheet">
     <title>Alumni Dashboard</title>
 </head>
 <body>
 <header>
 <h1 id="welcome-text">Welcome, <?php echo ucfirst(htmlspecialchars($_SESSION['firstname'])); ?></h1>
-<h1 id="logout-text"><a href="/logout.php">Logout</a></h1>
+<h1 id="logout-text"><a href="/logout.php" class="yellow-link">Logout</a></h1>
 </header>
 
-<p>Here are all of our registered alumni:</p>
+<center><p>Here are all of our registered alumni:</p></center>
 
 <div class="profile-row" id="profile-top">
-    <div class="profile-item">
+    <div class="profile-item table-header">
         <!-- Profile Picture -->
     </div>
-    <div class="profile-item">
-        First Name
-    </div>
-    <div class="profile-item">
-        Last Name
+    <div class="profile-item table-header">
+        Fullname
     </div>
 
-    <div class="profile-item">
+    <div class="profile-item table-header">
         Graduation Year
     </div>
 
-    <div class="profile-item">
+    <div class="profile-item table-header">
         Area of work
     </div>
-    <div class="profile-item">
+    <div class="profile-item table-header">
         Email
     </div>
 </div>
@@ -70,9 +69,7 @@
 
         echo '<div class="profile-item">';
         echo ucfirst(htmlspecialchars($row['firstname']));
-        echo '</div>';
-
-        echo '<div class="profile-item">';
+        echo ' ';
         echo ucfirst(htmlspecialchars($row['lastname']));
         echo '</div>';
 
@@ -85,11 +82,17 @@
         echo '</div>';
 
         echo '<div class="profile-item">';
+        echo '<a href="mailto:' . htmlspecialchars($row['email']) .'">';
         echo ucfirst(htmlspecialchars($row['email']));
+        echo '</a>';
         echo '</div>';
 
         echo '</div>';
     }
 ?>
+
+<img src="caps.png" class="footer-image">
+<img src="AugieLogo.png" alt="Augustana College" class="logo">
+
 </body>
 </html>
