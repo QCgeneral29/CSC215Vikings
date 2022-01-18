@@ -85,7 +85,7 @@ if(isset($_SESSION['id'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Please Login</title>
     
 </head>
 <body>
@@ -102,7 +102,7 @@ if(isset($_SESSION['id'])) {
         <input type="password" id="password" name="password"> <br>
         <button class = "button">Login</button>
         <p> Welcome back Alumni, we missed you.</p>
-        <p><a class="sign" href="index.php" target="_blank">Back to Homepage</a></p>
+        <p><a class="sign" href="index.php" target="">Back to Homepage</a></p>
     </form>
     </div>
     <br><br><br><br><br><br><br>

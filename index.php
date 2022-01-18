@@ -254,8 +254,8 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 
 
 			<div class="btn-group">
-				<button type="button"><a href="/loginpage.php"; style = "color:white">Sign-In</a></button>
-				<button><input type="submit"></input></button>
+				<button type="button"><a href="/loginpage.php"; style = "color:black">Sign-In</a></button>
+				<button style = "color:black"><input type="submit" value="Register"></input></button>
 			</div>
 	  	</form> 
 	</div>
