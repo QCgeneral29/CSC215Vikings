@@ -44,7 +44,7 @@
         <!-- Profile Picture -->
     </div>
     <div class="profile-item table-header">
-        Fullname
+        Full Name
     </div>
 
     <div class="profile-item table-header">
@@ -52,7 +52,7 @@
     </div>
 
     <div class="profile-item table-header">
-        Area of work
+        Area of Work
     </div>
     <div class="profile-item table-header">
         Email
