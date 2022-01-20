@@ -85,7 +85,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 			// prepare and bind
 			$prepareStatement = "INSERT INTO users (firstname, lastname, phonenumber, address, email, areaofwork, graduationyear, profilepicture, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			$stmt = $conn->prepare($prepareStatement);
-			$stmt->bind_param("ssisssiss",
+			$stmt->bind_param("ssssssiss",
 				$firstname,$lastname, $phonenumber, $address, $email, $areaofwork, $graduationyear, $profilepictureurl, $password
 			);
 			
@@ -230,7 +230,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 			<input type="text" id="lastname" name="lastname" required><br>
 			
 			<label for="phonenumber">Phone Number:</label><br>
-			<input type="number" id="phonenumber" name="phonenumber" required><br>
+			<input type="text" id="phonenumber" name="phonenumber" required><br>
 			
 			<label for="address">Address:</label><br>
 			<input type="text" id="address" name="address" required><br>
